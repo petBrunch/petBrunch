@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/brunch
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mariadb://localhost:33360/petBrunch
+    username: petBrunch
+    password: petBrunch
+    driver-class-name: org.mariadb.jdbc.Driver
 
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
     hibernate:
       ddl-auto: create
     properties:

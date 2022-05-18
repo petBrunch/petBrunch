@@ -23,7 +23,7 @@ public class PostRepositoryImpl implements PostRepositoryCustom {
                         post.title,
                         post.content,
                         post.commentNum,
-                        post.picture,
+                        post.image,
                         post.createdDate,
                         member.id,
                         member.nickName
@@ -45,7 +45,7 @@ public class PostRepositoryImpl implements PostRepositoryCustom {
                         post.title,
                         post.content,
                         post.commentNum,
-                        post.picture,
+                        post.image,
                         post.createdDate,
                         member.id,
                         member.nickName

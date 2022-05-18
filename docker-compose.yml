@@ -1,0 +1,33 @@
+version: '3.2'
+
+services:
+  maria-db:
+    image: mariadb
+    restart: always
+    container_name: MariaDB
+    ports:
+      - "33360:3306"
+    environment:
+      - MYSQL_DATABASE=petBrunch
+      - MYSQL_USER=petBrunch
+      - MYSQL_PASSWORD=petBrunch
+      - MYSQL_ROOT_PASSWORD=petBrunch
+      - TZ=Asia/Seoul
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - mariadb-data:/var/lib/mariadb
+
+  pet-brunch-app:
+    image: docker.io/lib/pet-brunch-app:latest
+    container_name: petBrunch-web-app
+    ports:
+      - 8080:8080
+    depends_on:
+      - maria-db
+    environment:
+      JAVA_OPTS: "-Dspring.datasource.url=jdbc:mariadb://maria-db:3306/petBrunch"
+
+volumes:
+  mariadb-data:
