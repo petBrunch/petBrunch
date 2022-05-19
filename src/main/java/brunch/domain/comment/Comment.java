@@ -1,14 +1,13 @@
 package brunch.domain.comment;
 
 import brunch.domain.TimeEntity;
-import brunch.domain.member.Member;
-import brunch.domain.post.Post;
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,20 +18,12 @@ public class Comment extends TimeEntity {
     @GeneratedValue
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "comment_id")
+    private List<BigComment> bigCommentList = new ArrayList<>();
 
-    @ManyToOne
-    @JoinColumn(name = "post_id")
-    private Post post;
-
+    @Column(length = 1000)
     private String content;
 
-    @Builder
-    private Comment(Member member, Post post, String content) {
-        this.member = member;
-        this.post = post;
-        this.content = content;
-    }
+    private boolean isDeleted;
 }
