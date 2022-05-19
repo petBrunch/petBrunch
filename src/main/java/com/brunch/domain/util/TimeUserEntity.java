@@ -1,4 +1,4 @@
-package brunch.domain;
+package com.brunch.domain.util;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedBy;

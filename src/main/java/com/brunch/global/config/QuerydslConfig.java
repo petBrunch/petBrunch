@@ -1,4 +1,4 @@
-package brunch.global.config;
+package com.brunch.global.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;

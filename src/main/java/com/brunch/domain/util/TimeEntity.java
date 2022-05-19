@@ -1,4 +1,4 @@
-package brunch.domain;
+package com.brunch.domain.util;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
@@ -17,8 +17,8 @@ public class TimeEntity {
 
     @CreatedDate
     @Column(updatable = false)
-    private LocalDateTime createdDate;
+    private LocalDateTime createDate;
 
     @LastModifiedDate
-    private LocalDateTime lastModifiedDate;
+    private LocalDateTime modifyDate;
 }

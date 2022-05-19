@@ -1,14 +1,11 @@
-package brunch.domain.comment;
+package com.brunch.domain.comment;
 
-import brunch.domain.TimeEntity;
+import com.brunch.domain.util.TimeEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -17,9 +14,14 @@ public class BigComment extends TimeEntity {
 
     @Id
     @GeneratedValue
+    @Column(name = "bigComment_id")
     private Long id;
 
-    @Column(length = 1000)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @Column(length = 1000, nullable = false)
     private String content;
 
     private boolean isDeleted;

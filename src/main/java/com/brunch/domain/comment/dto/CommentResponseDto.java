@@ -1,6 +1,6 @@
-package brunch.domain.comment.dto;
+package com.brunch.domain.comment.dto;
 
-import brunch.domain.comment.Comment;
+import com.brunch.domain.comment.Comment;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
