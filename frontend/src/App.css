@@ -35,19 +35,30 @@ button {
 .menu-btn img {
   width: 27px;
   height: 20px;
+  padding-left: 5px;
+  cursor: pointer;
 }
 
-.header-left h1 {
+.header-left p {
   display: inline-block;
 }
 
 .logo {
-  font-size: 16px;
+  font-size: 25px;
+  font-weight: 700;
   font-style: italic;
+  padding-left: 10px;
+  cursor: pointer;
 }
 
 .header-right {
   float: right;
+}
+
+.btn-search {
+  margin-top: 25px;
+  padding-right: 35px;
+  cursor: pointer;
 }
 
 

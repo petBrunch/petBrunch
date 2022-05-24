@@ -1,5 +1,5 @@
 
-function Header() {
+export default function Header() {
   return (
     <header className="App-header">
       <div className='wrap-inner'>
@@ -11,12 +11,12 @@ function Header() {
               alt='menu button'
             />
           </button>
-          <h1 className='logo'>petBrunch</h1>
+          <p className='logo'>PetBrunch</p>
         </div>
         <div className='header-right'>
           <div className="search-wrap">
             <form action=""></form>
-            <button className="btn-search">
+            <button className="btn-search" onClick={() => alert("add click event")}>
               <img src={`${process.env.PUBLIC_URL}/search.png`} alt="" />
             </button>
           </div>
@@ -25,5 +25,3 @@ function Header() {
     </header>
   )
 }
-
-export default Header;
